@@ -187,7 +187,7 @@ with
       rel.relpersistence in ('p') and
       -- We don't want classes that will clash with GraphQL (treat them as private)
       rel.relname not like E'\\\\_\\\\_%' and
-      rel.relkind in ('r', 'v', 'm', 'c', 'f') and
+      rel.relkind in ('r', 'v', 'm', 'c', 'f','p') and
       ($2 is true or not exists(
         select 1
         from pg_catalog.pg_depend
